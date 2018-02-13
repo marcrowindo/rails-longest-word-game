@@ -1,0 +1,17 @@
+<h1>Let's play a game!</h1>
+
+<div class="letters">
+  <% @letters.each do |letter| %>
+    <div class="letter"><%= letter.upcase %></div>
+  <% end %>
+</div>
+
+<p>What is the longest word you can find?</p>
+
+<form action="/score">
+  <input type="hidden" name="letters" id="letters" value="<%= @letters.join('') %>"/>
+  <input type="hidden" name="start_time" value="<%= @start_time %>"/>
+  <input type="text" name="input" id="bar">
+  <input type="submit" value="Check!" id="btn">
+
+</form>
